@@ -12,22 +12,31 @@
 UnbufferedSerial pc(USBTX, USBRX,9600);
 using namespace std;
 
+void hexToRGB(const std::string& hex, float& red, float& green, float& blue) {
+    std::istringstream iss(hex);
+    iss >> std::hex >> red;
+    iss >> std::hex >> green;
+    iss >> std::hex >> blue;
+}
+
 int main()
 {
     //Con pwmout usamos el peri
     PwmOut ledR(LED1);
     PwmOut ledG(LED2);
     PwmOut ledB(LED3);
+    
+    std::string hexColor;
+    std::cout << "Enter a hexadecimal color: ";
+    std::cin >> hexColor;
+
     float numR, numG, numB;
+    hexToRGB(hexColor, numR, numG, numB);
 
-    cout << "Ingresa el número para Red: \n";
-    cin >> numR;
+    std::string hexNumber;
+    std::cout << "Enter a hexadecimal number: ";
+    std::cin >> hexNumber;
 
-    cout << "Ingresa el número para Green: \n";
-    cin >> numG;
-
-    cout << "Ingresa el número para Blue: \n";
-    cin >> numB;
 
     float valorR = 1-(numR/255);
     float valorG = 1-(numG/255);
