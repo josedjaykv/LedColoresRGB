@@ -1,13 +1,13 @@
 ![](./resources/official_armmbed_example_badge.png)
 # Blinky Mbed OS example
 
-¿Que son 9600 baudios?
+#**¿Que son 9600 baudios?**
 Los baudios son una unidad de medida que se utiliza para expresar la velocidad de transmisión de datos en una comunicación serie. Un baudio representa la cantidad de cambios de estado (como transiciones de señal eléctrica) por segundo en una línea de comunicación.
 En el contexto de la comunicación serie, los baudios se utilizan para indicar la velocidad a la que se transmiten los datos entre dispositivos. Un valor de 9600 baudios significa que hay 9600 cambios de estado por segundo en la línea de comunicación.
 Cuando se utiliza un valor de 9600 baudios, se están transmitiendo 9600 bits por segundo en la línea. Esto no necesariamente significa que cada bit se represente por un cambio de estado; en la comunicación serial, se utilizan protocolos que pueden incluir bits de inicio, bits de datos y bits de parada, junto con posiblemente bits de paridad.
 En resumen, en el contexto de la comunicación serie, 9600 baudios indican la velocidad a la que los datos se transmiten y reciben entre dispositivos. Cuanto mayor sea el valor de baudios, mayor será la velocidad de transmisión de datos.
 
-¿Qué es modulación por ancho de pulso (PWM)?
+#**¿Qué es modulación por ancho de pulso (PWM)?**
 La Modulación por Ancho de Pulso (PWM, por sus siglas en inglés: Pulse Width Modulation) es una técnica utilizada en electrónica y control para controlar la cantidad de energía entregada a un dispositivo. Esta técnica es particularmente útil para controlar la velocidad de motores, la intensidad de la luz en LEDs, el volumen de altavoces y muchas otras aplicaciones en las que se necesita variar la potencia suministrada.
 La idea central detrás de PWM es modificar la duración relativa de un pulso de señal periódica (normalmente una onda cuadrada) mientras se mantiene constante la frecuencia de esta señal. En otras palabras, se altera el ancho del pulso, de ahí el nombre "Modulación por Ancho de Pulso".
 El principio básico es que, si mantienes la frecuencia constante y varías la duración de los pulsos, puedes simular una señal analógica (continua) controlando la cantidad de tiempo durante la cual la señal está en estado alto (encendido) en comparación con el tiempo total del ciclo. Esto se realiza a menudo a una frecuencia lo suficientemente alta como para que el ojo humano no perciba el parpadeo en caso de controlar LEDs o la mayoría de los dispositivos electrónicos.
