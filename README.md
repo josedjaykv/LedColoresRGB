@@ -17,3 +17,14 @@ Control de Luminosidad en LEDs: Se puede ajustar el brillo de un LED variando la
 Control de Servomotores: Los servomotores se controlan con PWM para ajustar su posición en grados.
 Control de Voltaje en Dispositivos: Al alternar rápidamente entre un estado de alta tensión y un estado de baja tensión, se puede controlar el nivel de voltaje medio entregado a un dispositivo.
 En resumen, PWM es una técnica esencial en electrónica y control que permite ajustar el nivel de energía entregado a un dispositivo al variar el ancho de los pulsos en una señal periódica.
+
+# **Función memmove**
+La función memmove es una función de la biblioteca estándar de C/C++ que se utiliza para copiar bloques de memoria de un lugar a otro, incluso si los bloques de memoria se superponen. Es útil cuando necesitas mover datos dentro de un bloque de memoria sin preocuparte por conflictos de superposición.
+Aquí está la sintaxis básica de memmove:
+```c++
+void* memmove(void* dest, const void* src, size_t count);
+```
+dest: Puntero al inicio del bloque de memoria de destino donde se copiarán los datos.
+src: Puntero al inicio del bloque de memoria de origen desde donde se copiarán los datos.
+count: Número de bytes que se copiarán desde el origen al destino.
+La razón por la que memmove es útil es que puede manejar situaciones en las que los bloques de memoria de origen y destino se superponen. Esto es crucial para garantizar que los datos se copien correctamente sin corromperlos.
