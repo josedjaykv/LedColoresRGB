@@ -29,3 +29,12 @@ void* memmove(void* dest, const void* src, size_t count);
 3. count: Número de bytes que se copiarán desde el origen al destino.
 
 La razón por la que memmove es útil es que puede manejar situaciones en las que los bloques de memoria de origen y destino se superponen. Esto es crucial para garantizar que los datos se copien correctamente sin corromperlos.
+
+# **Función sscanf**
+La función sscanf es una función de la biblioteca estándar de C/C++ que se utiliza para analizar (leer y convertir) datos desde una cadena de caracteres según un formato especificado. En este caso, se está utilizando para convertir una cadena hexadecimal en un valor numérico.
+
+Vamos a analizar cada parte de la llamada a sscanf:
+
+1. input: Es el primer argumento de la función sscanf. Es la cadena de caracteres que se va a analizar.
+2. "%x": Es el segundo argumento de sscanf. Es una cadena de formato que indica cómo se espera que esté estructurado el valor en la cadena input. En este caso, %x especifica que se espera un número hexadecimal.
+3. &colorValue: Es el tercer argumento de sscanf. Es un puntero a la variable en la que se almacenará el valor analizado. El operador & se utiliza para obtener la dirección de memoria de la variable colorValue, ya que sscanf necesita saber dónde almacenar el valor convertido.
