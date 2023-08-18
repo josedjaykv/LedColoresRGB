@@ -31,10 +31,25 @@ void* memmove(void* dest, const void* src, size_t count);
 La razón por la que memmove es útil es que puede manejar situaciones en las que los bloques de memoria de origen y destino se superponen. Esto es crucial para garantizar que los datos se copien correctamente sin corromperlos.
 
 # **Función sscanf**
+```c++
+sscanf(input, "%x", &colorValue);
+```
 La función sscanf es una función de la biblioteca estándar de C/C++ que se utiliza para analizar (leer y convertir) datos desde una cadena de caracteres según un formato especificado. En este caso, se está utilizando para convertir una cadena hexadecimal en un valor numérico.
 
 Vamos a analizar cada parte de la llamada a sscanf:
-
 1. input: Es el primer argumento de la función sscanf. Es la cadena de caracteres que se va a analizar.
 2. "%x": Es el segundo argumento de sscanf. Es una cadena de formato que indica cómo se espera que esté estructurado el valor en la cadena input. En este caso, %x especifica que se espera un número hexadecimal.
 3. &colorValue: Es el tercer argumento de sscanf. Es un puntero a la variable en la que se almacenará el valor analizado. El operador & se utiliza para obtener la dirección de memoria de la variable colorValue, ya que sscanf necesita saber dónde almacenar el valor convertido.
+
+# **Extraer valores RGB**
+```c++
+float red = (1-(float)((colorValue >> 16) & 0xFF) / 255.0f);
+```
+1. `colorValue`: Es el valor numérico que se obtiene después de convertir el valor hexadecimal ingresado por el usuario.
+2. `colorValue` >> 16: Esto realiza un desplazamiento a la derecha de 16 bits en el valor de colorValue. Básicamente, se desplaza el valor 16 bits hacia la derecha, lo que descarta los bits menos significativos y deja solo los 8 bits más significativos del componente rojo.
+3. `& 0xFF`: Esto realiza una operación AND bit a bit entre el resultado del desplazamiento (colorValue >> 16) y 0xFF. 0xFF es un número binario que tiene todos los bits en 1 en los 8 bits más bajos y todos los bits en 0 en los 24 bits superiores. La operación AND con 0xFF permite extraer los 8 bits más bajos del componente rojo.
+4. `(float)((colorValue >> 16) & 0xFF)`: Este paso convierte el valor resultante de la operación AND a un número de punto flotante (float). Ahora tenemos un valor decimal entre 0 y 255 que representa el componente rojo.
+5.`(1 - (float)((colorValue >> 16) & 0xFF) / 255.0f)`: Aquí estamos ajustando la intensidad del componente rojo. Como el valor original va de 0 a 255 (donde 0 es completamente apagado y 255 es completamente encendido), restamos este valor del 1 para invertirlo (mayor valor -> menor valor). Luego, dividimos por 255.0 para normalizarlo en el rango de 0 a 1, que es lo que espera la función setRGBColor.
+
+Entonces, la línea completa está calculando la intensidad del componente rojo en función del valor hexadecimal ingresado por el usuario, de manera que sea compatible con la función setRGBColor, que espera valores entre 0 y 1.
+
