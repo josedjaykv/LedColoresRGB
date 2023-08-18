@@ -27,4 +27,5 @@ void* memmove(void* dest, const void* src, size_t count);
 1. dest: Puntero al inicio del bloque de memoria de destino donde se copiarán los datos.
 2. src: Puntero al inicio del bloque de memoria de origen desde donde se copiarán los datos.
 3. count: Número de bytes que se copiarán desde el origen al destino.
+
 La razón por la que memmove es útil es que puede manejar situaciones en las que los bloques de memoria de origen y destino se superponen. Esto es crucial para garantizar que los datos se copien correctamente sin corromperlos.
